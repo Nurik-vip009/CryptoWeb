@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/CurrencyInfo.css'
 
 const CurrencyInfo = ({name, places}) => {
     return (

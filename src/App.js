@@ -71,13 +71,32 @@ const App = () => {
             return () => clearInterval(intervalId)
         },
         [])
+
+    const getProfitMessage = (buyPrice, sellPrice) => {
+        if (buyPrice < sellPrice){
+            return 'Это выгодное место для покупки!'
+        } else if (buyPrice > sellPrice){
+            return 'Это выгодное место для продажи!'
+        } else {
+            return 'Цены сопостовимы,  можно рассмотреть возможности покупки или продажи.'
+        }
+    }
     return (
-        <div>
+        <div className="styles.app">
             <CurrencyInfo {...currencyData} />
             <ExchangeInfo {...place1Data} />
             <NetworkInfo networks={place1Data.network} />
             <ExchangeInfo {...place2Data} />
             <NetworkInfo networks={place2Data.network} />
+
+            <div>
+                <h3>Сравнивание:</h3>
+                <p>
+                    {currencyData.places[0].name} vs. {currencyData.places[1].name}
+                    <br/>
+                    {getProfitMessage(currencyData.places[0].name, currencyData.places[1].name)}
+                </p>
+            </div>
         </div>
     );
 };

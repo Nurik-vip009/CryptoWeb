@@ -1,0 +1,11 @@
+.currency-info {
+    border: 2px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.place {
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}

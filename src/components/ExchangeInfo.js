@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/ExchangeInfo.css'
 
 const ExchangeInfo = ({volume, change, orderBook, network}) => {
     return (
